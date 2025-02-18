@@ -1,8 +1,7 @@
 name: ryu-cho
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   ryu-cho:
@@ -11,13 +10,13 @@ jobs:
     steps:
       - uses: vuejs-translations/ryu-cho@v1
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          username: kiaking
-          email: "kia.king.08@gmail.com"
-          upstream-repo: https://github.com/vitejs/docs-ja.git
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          username: github-actions
+          email: "action@github.com"
+          upstream-repo: https://github.com/Gumball12/vite-docs-ja-with-yuki-no.git
           upstream-repo-branch: main
           head-repo: https://github.com/vitejs/vite
           head-repo-branch: main
-          track-from: 8fa75b5f9ff3730270d0793e860019b9aa4577de
+          track-from: d444d6a113beeeb0e9d73ff157d83c45360d5699
           path-starts-with: docs/
           workflow-name: ryu-cho
